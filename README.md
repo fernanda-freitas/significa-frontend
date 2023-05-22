@@ -1,11 +1,17 @@
 
-# What's in Challenge Solution - IMDb Movie Search App
+# Significa Frontend Challenge Solution
 
 I completed the Significa's React application challenge by building an IMDb movie search app. The challenge involved creating a functional and responsive app based on the provided screens as a reference. Throughout the development process, I retrieved JSON content from IMDb's API using a search mechanism, filtered the data, and displayed it on the movie's detailed page. I implemented a Like feature that works seamlessly within the app and designed two extra screens to predict responsiveness and a Not found component.
 
 ## Preview Extra screens
 
-[https://xd.adobe.com/view/9af3807a-1e37-426f-915d-f3c35f3a1ae9-cfa0/](https://xd.adobe.com/view/9af3807a-1e37-426f-915d-f3c35f3a1ae9-cfa0/){:target="_blank"}
+Two extra screens were created in order to predict responsiveness in the Movie page and the Not found state.
+
+[https://xd.adobe.com/view/9af3807a-1e37-426f-915d-f3c35f3a1ae9-cfa0/](https://xd.adobe.com/view/9af3807a-1e37-426f-915d-f3c35f3a1ae9-cfa0/)
+
+![2 Search results – 2](https://github.com/fernanda-freitas/significa-frontend-challenge/assets/33285862/7385c7a0-2fa6-4e4b-a886-26c4759f9f8d)
+
+![iPhone 14 Plus, 13 Pro Max, 12 Pro Max – 1](https://github.com/fernanda-freitas/significa-frontend-challenge/assets/33285862/8214ddf1-58a0-4e80-b123-e6229d8c2e86)
 
 ## Technologies Used
 
