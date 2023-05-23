@@ -43,4 +43,4 @@ To accomplish the challenge, I utilized the following technologies and tools:
 
 ## Contributing
 
-Contributions are super welcomed! If you find any issues or want to enhance the app, feel free to submit your pull request.
+Contributions are super welcomed!! If you find any issues or want to enhance the app, feel free to submit your pull request.
