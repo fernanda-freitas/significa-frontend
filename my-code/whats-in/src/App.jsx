@@ -34,8 +34,7 @@ function App() {
 
   const handleLike = (movie) => {
     const movieFound = likedMovies.find((obj) => {return obj.imdbID === movie.imdbID})
-    
-    if (likedMovies.find((obj) => obj.imdbID === movie.imdbID)) {
+    if (movieFound) {
       setLikedMovies(likedMovies.filter((obj) => obj !== movieFound))
     } else {
       setLikedMovies((prevMovies) => [...prevMovies, movie])
