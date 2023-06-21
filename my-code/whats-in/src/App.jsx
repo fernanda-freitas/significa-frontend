@@ -39,24 +39,24 @@ function App() {
     setSelectedMovie(movie)
   }
 
-  useEffect(() => {
-    if (selectedMovie && selectedMovie.imdbID) {
-      setIsLoading(true)
-      fetch(`https://www.omdbapi.com/?i=${selectedMovie.imdbID}&apikey=${process.env.REACT_APP_API_KEY}`)
-        .then(response => response.json())
-        .then(data => {
-          setSelectedMovieInfo(data)
-          navigate('/movie')
-          setSelectedMovie(null)
-        })
-        .catch(error => {
-          console.error(error)
-        })
-        .finally(() => {
-          setIsLoading(false)
-        })
-    }
-  }, [selectedMovie])
+  // useEffect(() => {
+  //   if (selectedMovie && selectedMovie.imdbID) {
+  //     setIsLoading(true)
+  //     fetch(`https://www.omdbapi.com/?i=${selectedMovie.imdbID}&apikey=${process.env.REACT_APP_API_KEY}`)
+  //       .then(response => response.json())
+  //       .then(data => {
+  //         setSelectedMovieInfo(data)
+  //         navigate('/movie')
+  //         setSelectedMovie(null)
+  //       })
+  //       .catch(error => {
+  //         console.error(error)
+  //       })
+  //       .finally(() => {
+  //         setIsLoading(false)
+  //       })
+  //   }
+  // }, [selectedMovie])
 
   const handleLike = (movie) => {
     const movieFound = likedMovies.find((obj) => {return obj.imdbID === movie.imdbID})
