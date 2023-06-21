@@ -28,20 +28,20 @@ export default function Moviepage( {movie, isMovieLiked, handleLike, likedMovies
         handleLike(movie)
     }
 
-    // fetch(`https://www.omdbapi.com/?i=${selectedMovie.imdbID}&apikey=${process.env.REACT_APP_API_KEY}`)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //     setSelectedMovieInfo(data)
-    //     navigate('/movie')
-    //     setSelectedMovie(null)
-    //     })
-    //     .catch(error => {
-    //     console.error(error)
-    //     })
-    //     .finally(() => {
-    //     setIsLoading(false)
-    //     })
-    // }
+    fetch(`https://www.omdbapi.com/?i=${selectedMovie.imdbID}&apikey=${process.env.REACT_APP_API_KEY}`)
+        .then(response => response.json())
+        .then(data => {
+        setSelectedMovieInfo(data)
+        navigate('/movie')
+        setSelectedMovie(null)
+        })
+        .catch(error => {
+        console.error(error)
+        })
+        .finally(() => {
+        setIsLoading(false)
+        })
+    }
 
     return(
         <div className="grid">
