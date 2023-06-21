@@ -7,8 +7,8 @@ import Header from './components/Header'
 function App() {
   const [searchText, setSearchText] = useState('')
   const [movies, setMovies] = useState()
-  const [selectedMovie, setSelectedMovie] = useState(null)
-  const [selectedMovieInfo, setSelectedMovieInfo] = useState()
+  // const [selectedMovie, setSelectedMovie] = useState(null)
+  // const [selectedMovieInfo, setSelectedMovieInfo] = useState()
   const [isLoading, setIsLoading] = useState(false)
   const [likedMovies, setLikedMovies] = useState([]);
   const [isEmptySearch, setIsEmptySearch] = useState(true)
@@ -35,9 +35,9 @@ function App() {
     })
   }, [searchText])
 
-  const handleMovieSelection = (movie) => {
-    setSelectedMovie(movie)
-  }
+  // const handleMovieSelection = (movie) => {
+  //   setSelectedMovie(movie)
+  // }
 
   // useEffect(() => {
   //   if (selectedMovie && selectedMovie.imdbID) {
@@ -80,8 +80,8 @@ function App() {
     <div className='container'>
       <Header clearSearch={clearSearch}/>
         <Routes>
-            <Route exact path="/" element={<Homepage handleSearch={handleSearch} movies={movies} handleMovieSelection={handleMovieSelection} isLoading={isLoading} handleLike={handleLike} isMovieLiked={isMovieLiked} isEmptySearch={isEmptySearch} />}/>
-            <Route path="/movie" element={<Moviepage movie={selectedMovieInfo} isMovieLiked={isMovieLiked} likedMovies={likedMovies} handleLike={handleLike} />}/>
+            <Route exact path="/" element={<Homepage handleSearch={handleSearch} movies={movies} isLoading={isLoading} handleLike={handleLike} isMovieLiked={isMovieLiked} isEmptySearch={isEmptySearch} />}/>
+            <Route path="/movie" element={<Moviepage isMovieLiked={isMovieLiked} likedMovies={likedMovies} handleLike={handleLike} />}/>
         </Routes>
     </div>
   );

@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import iconBack from '../../images/icon-arrow-grey.svg'
 import logoImdb from '../../images/logo-imdb.svg'
 import logoRottenTomatoes from '../../images/logo-rotten-tomatoes.svg'
@@ -8,6 +8,8 @@ import iconLikeWhite from '../../images/icon-heart-white.svg'
 
 export default function Moviepage( {movie, isMovieLiked, handleLike, likedMovies} ) {
     const navigation = useNavigate();
+    const {movieId} = useParams()
+    console.log(movieId)
 
     const handleNavigation = () => {
         navigation(-1)
@@ -25,6 +27,20 @@ export default function Moviepage( {movie, isMovieLiked, handleLike, likedMovies
     const handleClick = (movie) => {
         handleLike(movie)
     }
+
+    const [selectedMovie, setSelectedMovie] = useState(null)
+    const [selectedMovieInfo, setSelectedMovieInfo] = useState()
+
+    fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=${process.env.REACT_APP_API_KEY}`)
+    .then(response => response.json())
+    .then(data => {
+    console.log(data)
+    setSelectedMovieInfo(data)
+    setSelectedMovie(null)
+    })
+    .catch(error => {
+    console.error(error)
+    })
 
     return(
         <div className="grid">
