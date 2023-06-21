@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import iconBack from '../../images/icon-arrow-grey.svg'
 import logoImdb from '../../images/logo-imdb.svg'
@@ -28,22 +28,19 @@ export default function Moviepage( {movie, isMovieLiked, handleLike, likedMovies
         handleLike(movie)
     }
 
-    fetch(`https://www.omdbapi.com/?i=${selectedMovie.imdbID}&apikey=${process.env.REACT_APP_API_KEY}`)
-        .then(response => response.json())
-        .then(data => {
-        setSelectedMovieInfo(data)
-        navigate('/movie')
-        setSelectedMovie(null)
-        })
-        .catch(error => {
-        console.error(error)
-        })
-        .finally(() => {
-        setIsLoading(false)
-        })
-    }
+    const [selectedMovie, setSelectedMovie] = useState(null)
+    const [selectedMovieInfo, setSelectedMovieInfo] = useState()
 
-    {console.log("test")}
+    fetch(`https://www.omdbapi.com/?i=${movieId}&apikey=${process.env.REACT_APP_API_KEY}`)
+    .then(response => response.json())
+    .then(data => {
+    console.log(data)
+    setSelectedMovieInfo(data)
+    setSelectedMovie(null)
+    })
+    .catch(error => {
+    console.error(error)
+    })
 
     return(
         <div className="grid">

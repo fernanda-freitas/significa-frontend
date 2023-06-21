@@ -7,15 +7,15 @@ import Loading from '../../components/Loading'
 import Empty from '../../components/Empty'
 import NotFound from '../../components/Notfound'
 
-export default function Homepage({ handleSearch, movies, handleMovieSelection, isLoading, handleLike, isMovieLiked, isEmptySearch }) {
+export default function Homepage({ handleSearch, movies, isLoading, handleLike, isMovieLiked, isEmptySearch }) {
 
     const handleChange = (event) => {
         handleSearch(event.target.value)
     }
     
-    const handleSelection = (movie) => {
-        handleMovieSelection(movie)
-    }
+    // const handleSelection = (movie) => {
+    //     handleMovieSelection(movie)
+    // }
 
     const handleClick = (e, movie) => {
         e.stopPropagation()
@@ -32,20 +32,20 @@ export default function Homepage({ handleSearch, movies, handleMovieSelection, i
                 <Loading />
                 ) : movies ? (
                     movies.map((movie) => (
-                    <div onClick={() => handleSelection(movie)} className="movie-card" key={movie.imdbID}>
-                        <Link to={`/${movie.imdbID}`}>
-                            <img className="movie-card__image" src={movie.Poster} alt="Movie card" />
-                            <button onClick={(e) => handleClick(e, movie)} className={`button-icon movie-card__like ${isMovieLiked(movie) ? 'liked' : ''}`}>
-                                <img src={isMovieLiked(movie) ? iconLiked : iconLike} alt="Like button" />
-                            </button>
-                            <div className="movie-card__overlay">
-                                <div className="movie-card__description">
-                                    <h4 className="movie-card__description__title">{movie.Title}</h4>
-                                    <p className="movie-card__description__year">{movie.Year}</p>
+                      <Link to={`/${movie.imdbID}`}>
+                            <div className="movie-card" key={movie.imdbID}>
+                                <img className="movie-card__image" src={movie.Poster} alt="Movie card" />
+                                <button onClick={(e) => handleClick(e, movie)} className={`button-icon movie-card__like ${isMovieLiked(movie) ? 'liked' : ''}`}>
+                                    <img src={isMovieLiked(movie) ? iconLiked : iconLike} alt="Like button" />
+                                </button>
+                                <div className="movie-card__overlay">
+                                    <div className="movie-card__description">
+                                        <h4 className="movie-card__description__title">{movie.Title}</h4>
+                                        <p className="movie-card__description__year">{movie.Year}</p>
+                                    </div>
                                 </div>
                             </div>
                         </Link>
-                    </div>
                     ))
                 ) : (
                     isEmptySearch ? <Empty /> : <NotFound />

@@ -7,8 +7,8 @@ import Header from './components/Header'
 function App() {
   const [searchText, setSearchText] = useState('')
   const [movies, setMovies] = useState()
-  const [selectedMovie, setSelectedMovie] = useState(null)
-  const [selectedMovieInfo, setSelectedMovieInfo] = useState()
+  // const [selectedMovie, setSelectedMovie] = useState(null)
+  // const [selectedMovieInfo, setSelectedMovieInfo] = useState()
   const [isLoading, setIsLoading] = useState(false)
   const [likedMovies, setLikedMovies] = useState([]);
   const [isEmptySearch, setIsEmptySearch] = useState(true)
@@ -35,9 +35,9 @@ function App() {
     })
   }, [searchText])
 
-  const handleMovieSelection = (movie) => {
-    setSelectedMovie(movie)
-  }
+  // const handleMovieSelection = (movie) => {
+  //   setSelectedMovie(movie)
+  // }
 
   // useEffect(() => {
   //   if (selectedMovie && selectedMovie.imdbID) {
