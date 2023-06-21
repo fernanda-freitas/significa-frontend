@@ -32,7 +32,7 @@ export default function Homepage({ handleSearch, movies, isLoading, handleLike, 
                 <Loading />
                 ) : movies ? (
                     movies.map((movie) => (
-                        <Link to={`/${movie.imdbID}`}>
+                      <Link to={`/${movie.imdbID}`}>
                             <div className="movie-card" key={movie.imdbID}>
                                 <img className="movie-card__image" src={movie.Poster} alt="Movie card" />
                                 <button onClick={(e) => handleClick(e, movie)} className={`button-icon movie-card__like ${isMovieLiked(movie) ? 'liked' : ''}`}>
