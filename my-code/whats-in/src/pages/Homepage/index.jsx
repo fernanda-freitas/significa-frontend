@@ -12,15 +12,15 @@ export default function Homepage({ handleSearch, movies, isLoading, handleLike, 
     const handleChange = (event) => {
         handleSearch(event.target.value)
     }
-    
-    // const handleSelection = (movie) => {
-    //     handleMovieSelection(movie)
-    // }
 
     const handleClick = (e, movie) => {
-        e.stopPropagation()
+        e.preventDefault()
         handleLike(movie)
     }
+
+    // const handleLinkClick = (e) => {
+    //     e.stopPropagation()
+    // }
     
     return (
         <div className="grid">
@@ -32,8 +32,8 @@ export default function Homepage({ handleSearch, movies, isLoading, handleLike, 
                 <Loading />
                 ) : movies ? (
                     movies.map((movie) => (
-                      <Link to={`/${movie.imdbID}`}>
-                            <div className="movie-card" key={movie.imdbID}>
+                        <div className="movie-card" key={movie.imdbID}>
+                            <Link to={`/${movie.imdbID}`}>
                                 <img className="movie-card__image" src={movie.Poster} alt="Movie card" />
                                 <button onClick={(e) => handleClick(e, movie)} className={`button-icon movie-card__like ${isMovieLiked(movie) ? 'liked' : ''}`}>
                                     <img src={isMovieLiked(movie) ? iconLiked : iconLike} alt="Like button" />
@@ -44,8 +44,8 @@ export default function Homepage({ handleSearch, movies, isLoading, handleLike, 
                                         <p className="movie-card__description__year">{movie.Year}</p>
                                     </div>
                                 </div>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     ))
                 ) : (
                     isEmptySearch ? <Empty /> : <NotFound />
