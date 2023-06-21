@@ -17,10 +17,6 @@ export default function Homepage({ handleSearch, movies, isLoading, handleLike, 
         e.preventDefault()
         handleLike(movie)
     }
-
-    // const handleLinkClick = (e) => {
-    //     e.stopPropagation()
-    // }
     
     return (
         <div className="grid">

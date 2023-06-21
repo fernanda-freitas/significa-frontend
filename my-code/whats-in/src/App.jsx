@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import Homepage from './pages/Homepage'
 import Moviepage from './pages/Movie'
@@ -7,12 +7,9 @@ import Header from './components/Header'
 function App() {
   const [searchText, setSearchText] = useState('')
   const [movies, setMovies] = useState()
-  // const [selectedMovie, setSelectedMovie] = useState(null)
-  // const [selectedMovieInfo, setSelectedMovieInfo] = useState()
   const [isLoading, setIsLoading] = useState(false)
   const [likedMovies, setLikedMovies] = useState([]);
   const [isEmptySearch, setIsEmptySearch] = useState(true)
-  const navigate = useNavigate()
   
   const handleSearch = (text) => {
     setSearchText(text)
@@ -34,29 +31,6 @@ function App() {
       console.error(error);
     })
   }, [searchText])
-
-  // const handleMovieSelection = (movie) => {
-  //   setSelectedMovie(movie)
-  // }
-
-  // useEffect(() => {
-  //   if (selectedMovie && selectedMovie.imdbID) {
-  //     setIsLoading(true)
-  //     fetch(`https://www.omdbapi.com/?i=${selectedMovie.imdbID}&apikey=${process.env.REACT_APP_API_KEY}`)
-  //       .then(response => response.json())
-  //       .then(data => {
-  //         setSelectedMovieInfo(data)
-  //         navigate('/movie')
-  //         setSelectedMovie(null)
-  //       })
-  //       .catch(error => {
-  //         console.error(error)
-  //       })
-  //       .finally(() => {
-  //         setIsLoading(false)
-  //       })
-  //   }
-  // }, [selectedMovie])
 
   const handleLike = (movie) => {
     const movieFound = likedMovies.find((obj) => {return obj.imdbID === movie.imdbID})
