@@ -80,8 +80,8 @@ function App() {
     <div className='container'>
       <Header clearSearch={clearSearch}/>
         <Routes>
-            <Route path="/" element={<Homepage handleSearch={handleSearch} movies={movies} handleMovieSelection={handleMovieSelection} isLoading={isLoading} handleLike={handleLike} isMovieLiked={isMovieLiked} isEmptySearch={isEmptySearch} />}/>
-            <Route path="/:movieId" element={<Moviepage movie={selectedMovieInfo} isMovieLiked={isMovieLiked} likedMovies={likedMovies} handleLike={handleLike} />}/>
+            <Route exact path="/" element={<Homepage handleSearch={handleSearch} movies={movies} isLoading={isLoading} handleLike={handleLike} isMovieLiked={isMovieLiked} isEmptySearch={isEmptySearch} />}/>
+            <Route path="/:movieId" element={<Moviepage isMovieLiked={isMovieLiked} likedMovies={likedMovies} handleLike={handleLike} />}/>
         </Routes>
     </div>
   );
