@@ -1,5 +1,5 @@
 
-# Significa Frontend Challenge Solution
+# What's in Solution
 
 This is a React application challenge I completed by building an IMDb movie search app. The challenge involved creating a functional and responsive app based on the provided screens as a reference. Throughout the development process, I retrieved JSON content from IMDb's API using a search mechanism, filtered the data, and displayed it on the movie's detailed page. I implemented a Like feature that works seamlessly within the app and designed two extra screens to predict responsiveness and a Not found component.
 
