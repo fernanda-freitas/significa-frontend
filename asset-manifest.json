@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/significa-frontend/static/css/main.92dc51f9.css",
+    "main.js": "/significa-frontend/static/js/main.79493ab0.js",
+    "static/media/illustration-notfound-state@2x.png": "/significa-frontend/static/media/illustration-notfound-state@2x.e0f76f477c4f4150369e.png",
+    "static/media/illustration-empty-state@2x.png": "/significa-frontend/static/media/illustration-empty-state@2x.91ab90290acf44d44cd6.png",
+    "static/media/logo-imdb.svg": "/significa-frontend/static/media/logo-imdb.92260f7adff4405e18d2fed706d2c5a8.svg",
+    "static/media/logo.svg": "/significa-frontend/static/media/logo.a28146522af1c4bba345e066cbe012ba.svg",
+    "static/media/logo-rotten-tomatoes.svg": "/significa-frontend/static/media/logo-rotten-tomatoes.f60abeea9c25a2d2ee63ff68b01ff40e.svg",
+    "static/media/icon-arrow-grey.svg": "/significa-frontend/static/media/icon-arrow-grey.8654fccd1faaa675b411ae8c5146cd43.svg",
+    "static/media/icon-magnifier-grey.svg": "/significa-frontend/static/media/icon-magnifier-grey.94ee2ed36223a12a52a39eba7054345f.svg",
+    "index.html": "/significa-frontend/index.html",
+    "static/media/icon-heart-full.svg": "/significa-frontend/static/media/icon-heart-full.4fbe3c1943046282d8d7c864c3f32b25.svg",
+    "static/media/icon-heart-white.svg": "/significa-frontend/static/media/icon-heart-white.742ca9769a260f2a833fa3cd9b854061.svg",
+    "static/media/icon-heart-grey.svg": "/significa-frontend/static/media/icon-heart-grey.1eccc116469b6391201d94fbb8d9d202.svg",
+    "main.92dc51f9.css.map": "/significa-frontend/static/css/main.92dc51f9.css.map",
+    "main.79493ab0.js.map": "/significa-frontend/static/js/main.79493ab0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92dc51f9.css",
+    "static/js/main.79493ab0.js"
+  ]
+}
